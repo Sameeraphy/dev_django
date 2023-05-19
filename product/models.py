@@ -4,7 +4,7 @@ from django.core.files import File
 from django.db import models
 
 class Category(models.Model):
-    name=models.CharField(max_length=255)
+    name=models.CharField(max_length=2553)
     slug=models.SlugField()
 
     class Meta:
@@ -18,7 +18,7 @@ class Category(models.Model):
 
 class Product(models.Model):
     category=models.ForeignKey(Category, related_name='products', on_delete=models.CASCADE)
-    name=models.CharField(max_length=255,null=True)
+    name=models.CharField(max_length=255)
     num=models.IntegerField(null=True)
     registration_num=models.CharField(max_length=20, null=True)
     slug=models.SlugField()
