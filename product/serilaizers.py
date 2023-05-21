@@ -16,8 +16,15 @@ class ProductSerializer(serializers.ModelSerializer):
             "Purchased_Price",
             "Current_Valuation",
             "Pool_Assigned",
-            "get_absolute_url",
+            "Assigned_Designation",
+            "Assigned_Person",
+            "Assigned_Range",
+            "Assigned_Office",
+            "condition",
+            "Ownership",
             "description",
+            "date_added",
+            "get_absolute_url",
             "get_image",
             "get_thumbnail"
         )
