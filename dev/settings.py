@@ -46,12 +46,30 @@ INSTALLED_APPS = [
     'product',
 ]
 
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:8080",
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost:8080',
+    'http://localhost:8082',
+    # Add other origins as needed
 ]
 
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:8080",
+    "http://localhost:8082",
+
+]
+
+
+# Allow specific methods for CORS requests
+CORS_ALLOW_METHODS = [
+    'DELETE',
+    'PUT',
+    # Add other allowed methods as needed
+]
+
+
+
 #I had to add this snippet to  fix "Ensure CORS response header values are valid"
-CORS_ALLOWED_HEADERS = default_headers+('custom-header',)
+CORS_ALLOWED_HEADERS = [default_headers+('custom-header','Content-Type',)]
 
 
 CORS_ORIGIN_ALLOW_ALL =True

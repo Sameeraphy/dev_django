@@ -27,7 +27,8 @@ class Product(models.Model):
     Registration_date=models.DateField(null=True, blank=True)
     Purchased_Price=models.DecimalField(max_digits=20, decimal_places=2, null=True, blank=True)
     Current_Valuation=models.DecimalField(max_digits=20, decimal_places=2, null=True, blank=True)
-    Pool_Assigned=models.BooleanField(choices=[(False, 'Pool'), (True, 'Assigned')], null=True, blank=True)
+    Pool_Assigned_choices=[('Pool','Pool'),('Assigned','Assigned'),]
+    Pool_Assigned=models.CharField(max_length=10, choices=Pool_Assigned_choices, null=True, blank=True)
     Assigned_Designation=models.CharField(max_length=50,null=True, blank=True)
     Assigned_Person=models.CharField(max_length=20,null=True, blank=True)
     Assigned_Range=models.CharField(max_length=20,null=True, blank=True)
