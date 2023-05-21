@@ -19,8 +19,8 @@ class Category(models.Model):
 class Product(models.Model):
     category=models.ForeignKey(Category, related_name='products', on_delete=models.CASCADE)
     name=models.CharField(max_length=255)
-    num=models.IntegerField(null=True)
-    registration_num=models.CharField(max_length=20, null=True)
+    num=models.IntegerField()
+    registration_num=models.CharField(max_length=20)
     slug=models.SlugField()
     make=models.CharField(max_length=50, null=True)
     model=models.CharField(max_length=50, null=True)
